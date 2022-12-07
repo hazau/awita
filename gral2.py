@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from sensorsi import Ui_MainWindow
+from sensor import Ui_MainWindow
 
 
 class Ui_General(object):

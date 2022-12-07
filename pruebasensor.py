@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'intgraf.ui'
+# Form implementation generated from reading ui file 'sensor.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,9 +9,16 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from password import Ui_password
 
 class Ui_MainWindow(object):
+                  def openWindow(self):
+                        self.window = QtWidgets.QMainWindow()
+                        self.ui = Ui_password()
+                        self.ui.setupUi(self.window)
+                        self.window.show()
+
+        
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -21,17 +28,17 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setStyleSheet("background-color:rgb(163, 191, 120);\n"
+        self.sensor = QtWidgets.QFrame(self.centralwidget)
+        self.sensor.setStyleSheet("background-color:rgb(163, 191, 120);\n"
 "border-radius: 5px;\n"
 "\n"
 "")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame)
+        self.sensor.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.sensor.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.sensor.setObjectName("sensor")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.sensor)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.frame_sup = QtWidgets.QFrame(self.frame)
+        self.frame_sup = QtWidgets.QFrame(self.sensor)
         self.frame_sup.setMinimumSize(QtCore.QSize(0, 40))
         self.frame_sup.setMaximumSize(QtCore.QSize(16777215, 400))
         self.frame_sup.setStyleSheet("Qframe{\n"
@@ -58,13 +65,13 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.frame_2)
         self.label.setGeometry(QtCore.QRect(40, 40, 151, 211))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("spider-plant.png"))
+        self.label.setPixmap(QtGui.QPixmap("../Downloads/spider-plant.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.frame_2)
         self.label_2.setGeometry(QtCore.QRect(260, 40, 151, 211))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("../../../Downloads/plant.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("../Downloads/plant.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.frame_2)
@@ -88,15 +95,15 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
-        self.widget = QtWidgets.QWidget(self.frame_3)
-        self.widget.setGeometry(QtCore.QRect(40, 30, 221, 271))
-        self.widget.setObjectName("widget")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.widget)
+        self.layoutWidget = QtWidgets.QWidget(self.frame_3)
+        self.layoutWidget.setGeometry(QtCore.QRect(40, 30, 221, 271))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.progressBar1 = QtWidgets.QProgressBar(self.widget)
+        self.progressBar1 = QtWidgets.QProgressBar(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Century Gothic")
         font.setPointSize(26)
@@ -107,7 +114,7 @@ class Ui_MainWindow(object):
         self.progressBar1.setProperty("value", 24)
         self.progressBar1.setObjectName("progressBar1")
         self.verticalLayout_3.addWidget(self.progressBar1)
-        self.label_5 = QtWidgets.QLabel(self.widget)
+        self.label_5 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Century Gothic")
         font.setPointSize(14)
@@ -118,7 +125,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addLayout(self.verticalLayout_3)
         self.verticalLayout_4 = QtWidgets.QVBoxLayout()
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.progressBar2 = QtWidgets.QProgressBar(self.widget)
+        self.progressBar2 = QtWidgets.QProgressBar(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Century Gothic")
         font.setPointSize(26)
@@ -129,7 +136,7 @@ class Ui_MainWindow(object):
         self.progressBar2.setProperty("value", 24)
         self.progressBar2.setObjectName("progressBar2")
         self.verticalLayout_4.addWidget(self.progressBar2)
-        self.label_6 = QtWidgets.QLabel(self.widget)
+        self.label_6 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Century Gothic")
         font.setPointSize(14)
@@ -150,19 +157,19 @@ class Ui_MainWindow(object):
         self.pushButton_4.setGeometry(QtCore.QRect(670, 10, 31, 28))
         self.pushButton_4.setObjectName("pushButton_4")
         self.verticalLayout_2.addWidget(self.frame_sup)
-        self.frame_inf = QtWidgets.QFrame(self.frame)
+        self.frame_inf = QtWidgets.QFrame(self.sensor)
         self.frame_inf.setMaximumSize(QtCore.QSize(16777215, 70))
         self.frame_inf.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_inf.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_inf.setObjectName("frame_inf")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.frame_inf)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton_2 = QtWidgets.QPushButton(self.frame_inf)
+        self.pushButton_2 = QtWidgets.QPushButton(self.frame_inf, clicked= lambda:self.openWindow())
         self.pushButton_2.setMinimumSize(QtCore.QSize(45, 45))
         self.pushButton_2.setMaximumSize(QtCore.QSize(45, 45))
         self.pushButton_2.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../Downloads/settings.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../Downloads/settings.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_2.setIcon(icon)
         self.pushButton_2.setIconSize(QtCore.QSize(45, 45))
         self.pushButton_2.setObjectName("pushButton_2")
@@ -172,7 +179,7 @@ class Ui_MainWindow(object):
         self.pushButton.setMaximumSize(QtCore.QSize(45, 45))
         self.pushButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../../OneDrive-Deere&Co/OneDrive - Deere & Co/Pictures/}.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("../OneDrive-Deere&Co/OneDrive - Deere & Co/Pictures/}.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton.setIcon(icon1)
         self.pushButton.setIconSize(QtCore.QSize(45, 45))
         self.pushButton.setObjectName("pushButton")
@@ -182,13 +189,13 @@ class Ui_MainWindow(object):
         self.pushButton_3.setMaximumSize(QtCore.QSize(45, 45))
         self.pushButton_3.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../../../Downloads/question.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("../Downloads/question.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_3.setIcon(icon2)
         self.pushButton_3.setIconSize(QtCore.QSize(45, 45))
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout.addWidget(self.pushButton_3)
         self.verticalLayout_2.addWidget(self.frame_inf)
-        self.verticalLayout.addWidget(self.frame)
+        self.verticalLayout.addWidget(self.sensor)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))

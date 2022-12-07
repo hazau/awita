@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'PSWd.ui'
+# Form implementation generated from reading ui file 'password.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,9 +9,17 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from sistema import Ui_Admin_modo
 
 
 class Ui_PSWD(object):
+
+    def openWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_Admin_modo()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, PSWD):
         PSWD.setObjectName("PSWD")
         PSWD.resize(800, 578)
@@ -19,7 +27,9 @@ class Ui_PSWD(object):
         self.centralwidget.setObjectName("centralwidget")
         self.PSWD_2 = QtWidgets.QFrame(self.centralwidget)
         self.PSWD_2.setGeometry(QtCore.QRect(0, 0, 800, 600))
-        self.PSWD_2.setStyleSheet("background-color: rgb(170, 255, 127)\n"
+        self.PSWD_2.setStyleSheet("background-color:rgb(163, 191, 120);\n"
+"border-radius: 5px;\n"
+"\n"
 "")
         self.PSWD_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.PSWD_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -28,7 +38,7 @@ class Ui_PSWD(object):
         self.user.setGeometry(QtCore.QRect(60, 50, 41, 41))
         self.user.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../../Pictures/usuario.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("../../Pictures/usuario.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.user.setIcon(icon)
         self.user.setIconSize(QtCore.QSize(70, 50))
         self.user.setObjectName("user")
@@ -36,24 +46,27 @@ class Ui_PSWD(object):
         self.home.setGeometry(QtCore.QRect(660, 50, 31, 31))
         self.home.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../../../Pictures/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("../../Pictures/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.home.setIcon(icon1)
         self.home.setObjectName("home")
         self.comboBox = QtWidgets.QComboBox(self.PSWD_2)
-        self.comboBox.setGeometry(QtCore.QRect(120, 50, 521, 41))
-        self.comboBox.setStyleSheet("background-color: rgb(85, 170, 0)")
+        self.comboBox.setGeometry(QtCore.QRect(130, 50, 521, 21))
+        font = QtGui.QFont()
+        font.setFamily("Century Gothic")
+        self.comboBox.setFont(font)
+        self.comboBox.setStyleSheet("background-color: rgb(162, 180, 168);")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.label = QtWidgets.QLabel(self.PSWD_2)
-        self.label.setGeometry(QtCore.QRect(290, 200, 221, 341))
+        self.label.setGeometry(QtCore.QRect(290, 160, 221, 341))
         self.label.setStyleSheet("")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../../../../Pictures/gota.png"))
+        self.label.setPixmap(QtGui.QPixmap("../awita/awitaa.png"))
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(self.PSWD_2)
-        self.pushButton.setGeometry(QtCore.QRect(290, 540, 201, 28))
+        self.pushButton = QtWidgets.QPushButton(self.PSWD_2,)
+        self.pushButton.setGeometry(QtCore.QRect(290, 500, 201, 28))
         self.pushButton.setStyleSheet("font: 12pt \"Century Gothic\";\n"
 "background-color: rgb(85, 170, 0);\n"
 "")

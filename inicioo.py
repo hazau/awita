@@ -9,25 +9,36 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from GRAL import Ui_General
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
-        MainWindow.setStyleSheet("background-color:rgb(163, 191, 120);\n"
+class Ui_Inicio(object):
+    
+    def openWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_General()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+
+
+        
+    def setupUi(self, Inicio):
+        Inicio.setObjectName("Inicio")
+        Inicio.resize(800, 600)
+        Inicio.setStyleSheet("background-color:rgb(163, 191, 120);\n"
 "border-radius: 5px;\n"
 "\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget = QtWidgets.QWidget(Inicio)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(280, 80, 221, 351))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../../../OneDrive-Deere&Co/OneDrive - Deere & Co/Pictures/awitaa.png"))
+        self.label.setPixmap(QtGui.QPixmap('awitaa.png'))
         self.label.setScaledContents(False)
         self.label.setObjectName("label")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget, clicked = lambda: self.openWindow())
         self.pushButton.setGeometry(QtCore.QRect(350, 450, 101, 31))
         font = QtGui.QFont()
         font.setFamily("Century Gothic")
@@ -38,29 +49,29 @@ class Ui_MainWindow(object):
 "\n"
 "")
         self.pushButton.setObjectName("pushButton")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        Inicio.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(Inicio)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        Inicio.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(Inicio)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        Inicio.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(Inicio)
+        QtCore.QMetaObject.connectSlotsByName(Inicio)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, Inicio):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "Iniciar"))
+        Inicio.setWindowTitle(_translate("Inicio", "MainWindow"))
+        self.pushButton.setText(_translate("Inicio", "Iniciar"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    Inicio = QtWidgets.QMainWindow()
+    ui = Ui_Inicio()
+    ui.setupUi(Inicio)
+    Inicio.show()
     sys.exit(app.exec_())
